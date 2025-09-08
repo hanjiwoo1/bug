@@ -226,7 +226,7 @@ export default function PestControlInquiry() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  "바퀴벌레 때문에 고생했는데 한 번의 방역으로 완전히 해결되었습니다. 친환경 약제라 안심이 되네요."
+                  &ldquo;바퀴벌레 때문에 고생했는데 한 번의 방역으로 완전히 해결되었습니다. 친환경 약제라 안심이 되네요.&rdquo;
                 </p>
               </CardContent>
             </Card>
@@ -243,7 +243,7 @@ export default function PestControlInquiry() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  "식당 운영하면서 방역이 가장 중요한데, 정기적으로 관리해주셔서 항상 깨끗한 환경을 유지하고 있습니다."
+                  &ldquo;식당 운영하면서 방역이 가장 중요한데, 정기적으로 관리해주셔서 항상 깨끗한 환경을 유지하고 있습니다.&rdquo;
                 </p>
               </CardContent>
             </Card>
@@ -260,7 +260,7 @@ export default function PestControlInquiry() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  "사무실 개미 문제로 연락드렸는데, 빠른 대응과 완벽한 해결로 직원들이 모두 만족하고 있습니다."
+                  &ldquo;사무실 개미 문제로 연락드렸는데, 빠른 대응과 완벽한 해결로 직원들이 모두 만족하고 있습니다.&rdquo;
                 </p>
               </CardContent>
             </Card>

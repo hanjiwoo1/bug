@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "@prisma/client": "^6.15.0",
-    "@types/bcryptjs": "^3.0.0",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-slot": "^1.2.3",
     "@types/node": "^22.10.2",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
