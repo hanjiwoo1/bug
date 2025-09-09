@@ -27,7 +27,7 @@ export async function POST(request: NextRequest) {
         email: email || '',
         phone,
         address,
-        pestType: pestType || '',
+        pest_type: pestType || '',
         message: message || '',
       },
     });

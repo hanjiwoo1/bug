@@ -398,7 +398,7 @@ export default function PestControlInquiry() {
                 <h3 className="font-semibold text-foreground mb-2">전화 상담</h3>
                 <p className="text-sm text-muted-foreground mb-2">평일 09:00 - 18:00</p>
                 <Badge variant="outline" className="text-primary border-primary">
-                  1588-0000
+                  010-2000-3575
                 </Badge>
               </div>
 
@@ -409,7 +409,7 @@ export default function PestControlInquiry() {
                 <h3 className="font-semibold text-foreground mb-2">이메일 문의</h3>
                 <p className="text-sm text-muted-foreground mb-2">24시간 접수 가능</p>
                 <Badge variant="outline" className="text-primary border-primary">
-                  info@pestcontrol.co.kr
+                  kof2998@naver.com
                 </Badge>
               </div>
 
@@ -432,7 +432,7 @@ export default function PestControlInquiry() {
       <footer className="py-8 border-t">
         <div className="container mx-auto px-4">
           <div className="text-center text-sm text-muted-foreground">
-            <p>&copy; 2024 전문 해충방역 서비스. All rights reserved.</p>
+            <p>&copy; 2025 전문 해충방역 서비스. All rights reserved.</p>
             <p className="mt-2">안전하고 효과적인 방역으로 깨끗한 환경을 만들어드립니다.</p>
           </div>
         </div>

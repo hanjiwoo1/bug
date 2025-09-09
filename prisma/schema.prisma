@@ -11,13 +11,13 @@ datasource db {
 }
 
 model Inquiry {
-  id        String   @id @default(cuid())
-  name      String   // 성함
-  email     String?  // 이메일 (선택사항)
-  phone     String   // 연락처
-  address   String   // 주소
-  pestType  String?  // 해충 종류 (선택사항)
-  message   String?  // 상세 내용 (선택사항)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id         String   @id @default(cuid())
+  name       String   // 성함
+  email      String?  // 이메일 (선택사항)
+  phone      String   // 연락처
+  address    String   // 주소
+  pest_type  String?  // 해충 종류 (선택사항)
+  message    String?  // 상세 내용 (선택사항)
+  created_at DateTime @default(now()) @map("created_at")
+  updated_at DateTime @updatedAt @map("updated_at")
 }
