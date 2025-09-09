@@ -60,8 +60,16 @@ export async function POST(request: NextRequest) {
     );
   } catch (error) {
     console.error('문의 접수 오류:', error);
+    console.error('오류 상세:', {
+      message: error instanceof Error ? error.message : 'Unknown error',
+      stack: error instanceof Error ? error.stack : undefined,
+      name: error instanceof Error ? error.name : undefined
+    });
     return NextResponse.json(
-      { error: '문의 접수 중 오류가 발생했습니다.' },
+      { 
+        error: '문의 접수 중 오류가 발생했습니다.',
+        details: error instanceof Error ? error.message : 'Unknown error'
+      },
       { status: 500 }
     );
   }
