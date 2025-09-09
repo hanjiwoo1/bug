@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Badge } from "@/components/ui/badge"
-import { Shield, Bug, Home, Building2, Phone, Mail, MapPin, Star, CheckCircle } from "lucide-react"
+import { Shield, Bug, Home, Building2, Phone, Mail, MapPin, CheckCircle } from "lucide-react"
 
 export default function PestControlInquiry() {
   const [formData, setFormData] = useState({
