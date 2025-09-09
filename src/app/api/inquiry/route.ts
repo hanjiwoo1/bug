@@ -1,11 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
-import twilio from 'twilio';
-
-const client = twilio(
-  process.env.TWILIO_ACCOUNT_SID,
-  process.env.TWILIO_AUTH_TOKEN
-);
+import { supabase } from '@/lib/supabase';
+import { sendInquiryEmail } from '@/lib/email';
 
 export async function POST(request: NextRequest) {
   try {
@@ -20,36 +15,58 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 데이터베이스에 문의 저장
-    const inquiry = await prisma.inquiry.create({
-      data: {
+    // 데이터베이스에 문의 저장 (RLS 우회)
+    const { data: inquiry, error } = await supabase
+      .from('inquiry')
+      .insert({
         name,
         email: email || '',
         phone,
         address,
         pest_type: pestType || '',
         message: message || '',
-      },
-    });
+      })
+      .select()
+      .single();
 
-    // SMS 알림 발송
-    try {
-      const smsMessage = `새로운 해충 방역 문의가 접수되었습니다.
-성함: ${name}
-연락처: ${phone}
-주소: ${address}
-해충 종류: ${pestType || '미지정'}
-상세 내용: ${message || '없음'}`;
-
-      await client.messages.create({
-        body: smsMessage,
-        from: process.env.TWILIO_PHONE_NUMBER,
-        to: process.env.SELLER_PHONE_NUMBER || '+821012345678',
-      });
-    } catch (smsError) {
-      console.error('SMS 발송 실패:', smsError);
-      // SMS 실패해도 문의는 저장되므로 계속 진행
+    if (error) {
+      throw new Error(`데이터베이스 저장 실패: ${error.message}`);
     }
+
+    // 이메일 알림 발송
+    try {
+      await sendInquiryEmail({
+        name,
+        email: email || '',
+        phone,
+        address,
+        pestType: pestType || '',
+        message: message || '',
+      });
+      console.log('이메일 발송 성공');
+    } catch (emailError) {
+      console.error('이메일 발송 실패:', emailError);
+      // 이메일 실패해도 문의는 저장되므로 계속 진행
+    }
+
+    // SMS 알림 발송 (비활성화)
+    // try {
+    //   const smsMessage = `새로운 해충 방역 문의가 접수되었습니다.
+    // 성함: ${name}
+    // 연락처: ${phone}
+    // 주소: ${address}
+    // 해충 종류: ${pestType || '미지정'}
+    // 상세 내용: ${message || '없음'}`;
+
+    //   await client.messages.create({
+    //     body: smsMessage,
+    //     from: process.env.TWILIO_PHONE_NUMBER,
+    //     to: process.env.SELLER_PHONE_NUMBER || '+821012345678',
+    //   });
+    // } catch (smsError) {
+    //   console.error('SMS 발송 실패:', smsError);
+    //   // SMS 실패해도 문의는 저장되므로 계속 진행
+    // }
 
     return NextResponse.json(
       { 
