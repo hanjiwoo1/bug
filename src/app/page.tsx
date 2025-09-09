@@ -1,8 +1,6 @@
 "use client"
 
-import type React from "react"
-
-import { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -12,6 +10,16 @@ import { Badge } from "@/components/ui/badge"
 import { Shield, Bug, Home, Building2, Phone, Mail, MapPin, CheckCircle } from "lucide-react"
 
 export default function PestControlInquiry() {
+  // 메타데이터 설정
+  useEffect(() => {
+    document.title = "전문 해충방역 서비스 | 바퀴벌레, 쥐, 개미 완전 해결";
+    
+    // 메타 태그 업데이트
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', '10년이상 경력의 전문 방역사가 안전하고 효과적인 해충방역 서비스를 제공합니다. 바퀴벌레, 쥐, 개미 등 모든 해충 문제를 완전히 해결해드립니다. 합리적인 가격, 무료 상담.');
+    }
+  }, []);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
