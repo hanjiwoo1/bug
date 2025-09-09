@@ -164,8 +164,8 @@ export default function PestControlInquiry() {
                   <CheckCircle className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-foreground mb-2">친환경 약제 사용</h3>
-                  <p className="text-sm text-muted-foreground">인체에 무해한 친환경 약제로 안전한 방역을 실시합니다</p>
+                  <h3 className="font-semibold text-foreground mb-2">합리적인 가격</h3>
+                  <p className="text-sm text-muted-foreground">경쟁력 있는 가격으로 고품질 방역 서비스를 제공합니다</p>
                 </div>
               </div>
 
@@ -205,68 +205,6 @@ export default function PestControlInquiry() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-16 bg-card">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4">고객 후기</h2>
-            <p className="text-muted-foreground">만족한 고객들의 생생한 후기를 확인해보세요</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <Card>
-              <CardHeader>
-                <div className="flex items-center gap-2 mb-2">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <CardTitle className="text-lg">김○○님</CardTitle>
-                <CardDescription>아파트 거주</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  &ldquo;바퀴벌레 때문에 고생했는데 한 번의 방역으로 완전히 해결되었습니다. 친환경 약제라 안심이 되네요.&rdquo;
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <div className="flex items-center gap-2 mb-2">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <CardTitle className="text-lg">박○○님</CardTitle>
-                <CardDescription>식당 운영</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  &ldquo;식당 운영하면서 방역이 가장 중요한데, 정기적으로 관리해주셔서 항상 깨끗한 환경을 유지하고 있습니다.&rdquo;
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <div className="flex items-center gap-2 mb-2">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <CardTitle className="text-lg">이○○님</CardTitle>
-                <CardDescription>사무실 관리</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  &ldquo;사무실 개미 문제로 연락드렸는데, 빠른 대응과 완벽한 해결로 직원들이 모두 만족하고 있습니다.&rdquo;
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
 
       {/* Inquiry Form Section */}
       <section id="inquiry-form" className="py-16">

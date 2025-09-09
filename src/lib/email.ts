@@ -13,10 +13,6 @@ export async function sendInquiryEmail(data: {
 }) {
   const { name, email, phone, address, pestType, message } = data;
 
-  console.log('이메일 발송 시도:', { name, email, phone, address, pestType, message });
-  console.log('RESEND_API_KEY:', process.env.RESEND_API_KEY ? '설정됨' : '설정되지 않음');
-  console.log('EMAIL_TO:', process.env.EMAIL_TO);
-
   try {
     const result = await resend.emails.send({
       from: 'onboarding@resend.dev', // Resend 기본 도메인 사용
